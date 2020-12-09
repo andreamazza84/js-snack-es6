@@ -1,3 +1,5 @@
+//BLOCCO 4
+
 //JSnack 1A
 //Creare un oggetto palla che abbia le seguenti proprietà.
 //Nome = palla
@@ -20,32 +22,91 @@
 //da corsa con le seguenti proprietà: nome e peso.
 //Stampare a schermo la bici con peso minore.
 
-biciclette = [
-    {'nome': 'bianchi',
-    'peso': '4800'},
-    {'nome': 'conalgo',
-    'peso': '3700'},
-    {'nome': 'adriatica',
-    'peso': '5000'},
-    {'nome': 'marca-x',
-    'peso': '4000'},
-    {'nome': 'marca-y',
-    'peso': '3200'},
-    {'nome': 'marca-z',
-    'peso': '3600'},
+// biciclette = [
+//     {'nome': 'bianchi',
+//     'peso': '4800'},
+//     {'nome': 'conalgo',
+//     'peso': '3700'},
+//     {'nome': 'adriatica',
+//     'peso': '5000'},
+//     {'nome': 'marca-x',
+//     'peso': '4000'},
+//     {'nome': 'marca-y',
+//     'peso': '3200'},
+//     {'nome': 'marca-z',
+//     'peso': '3600'},
+// ];
+
+// const min = biciclette[0]['peso'];
+// let marcaMin = "";
+// for (let index = 1; index < biciclette.length; index++) {
+    
+//     if(min > biciclette[index]['peso']){
+//         min = biciclette[index]['peso'];
+//         marcaMin = biciclette[index]['nome'];
+//     }    
+// }
+
+//console.log(`La bici di marca ${marcaMin} è la più leggera e pesa ${min} g`);
+
+//JSnack 3
+//Creare un oggetto che rappresenti un triangolo rettangolo,
+//con le seguenti proprietà: base e altezza.
+//Calcolare perimetro e area.
+
+// const triangolo = {
+//     'base': 4,
+//     'altezza': 3
+// };
+
+// triangolo.ipotenusa = Math.sqrt(Math.pow(triangolo.base, 2) + Math.pow(triangolo.altezza, 2));
+// triangolo.perimetro = triangolo.base + triangolo.altezza + triangolo.ipotenusa;
+// triangolo.area = (triangolo.base * triangolo.altezza)/2;
+
+// console.log(triangolo);
+
+//JSnack 4A
+//Creare un array di oggetti di squadre di calcio.
+//Ogni squadra avrà diverse proprietà:
+//nome, punti fatti, falli subiti.
+//Nome sarà l’unica proprietà da compilare, le altre
+//saranno tutte settate a 0.
+
+const squadre = [
+    {'nome':'atalanta','punti':0, 'falli':0},
+    {'nome':'juventus','punti':0, 'falli':0},
+    {'nome':'chievo','punti':0, 'falli':0},
+    {'nome':'milan','punti':0, 'falli':0},
+    {'nome':'inter','punti':0, 'falli':0},
+    {'nome':'parma','punti':0, 'falli':0},
+    {'nome':'lazio','punti':0, 'falli':0},
+    {'nome':'napoli','punti':0, 'falli':0},
+    {'nome':'fiorentina','punti':0, 'falli':0}
 ];
 
-let min = biciclette[0]['peso'];
-let marcaMin = "";
-for (let index = 1; index < biciclette.length; index++) {
-    
-    if(min > biciclette[index]['peso']){
-        min = biciclette[index]['peso'];
-        marcaMin = biciclette[index]['nome'];
-    }    
+//JSnack 4B
+//Generare numeri random al posto degli 0 nelle proprietà:
+//punti fatti e falli subiti
+
+random = (min, max) => {
+    let randomNum = Math.floor(Math.random()*(max - min)) + min;
+    return randomNum;
 }
 
-console.log(`La bici di marca ${marcaMin} è la più leggera e pesa ${min} g`);
+for (let index = 0; index < squadre.length; index++) {
+    squadre[index]['punti'] = random(20, 200);
+    squadre[index]['falli'] = random(10, 50);
+}
+
+console.log(squadre);
+
+//BLOCCO 5
+
+
+
+
+
+
 
 //Scrivi una funzione che accetti una stringa 
 //come argomento e la ritorni girata 
