@@ -214,42 +214,42 @@
 //     elementi da uno e dall’altro
 //     es. [a,b,c], [1,2,3] → [a,1,b,2,c,3].
 
-let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-let letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'l'];
+// const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+// const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'l'];
 
-mixer = (array1, array2) => {
-    mixedArray = [];
-    for (let index = 0; index < array1.length; index++) {
-        mixedArray[2*index] = array1[index];
-        mixedArray[2*index + 1] = array2[index];      
-    }
-    return mixedArray;
-}
-
-console.log(mixer(numbers, letters));
-
-//JSnack 5
-//Scrivi una funzione che accetti tre argomenti:
-//un array e due numeri (“a” più piccolo di “b” e “b” grande 
-//al massimo quanto il numero di elementi dell’array). 
-//La funzione ritornerà un nuovo array con i valori che hanno la posizione
-// compresa tra “a” e “b”
-
-// list = [1, 2, 3, 4, 5, 6, 7, 8, "Marco", true] ;
-// const trim = (array, a, b) =>{
-//     if(b > array.length){
-//         b = array.length;
+// const mixer = (array1, array2) => {
+//     mixedArray = [];
+//     for (let index = 0; index < array1.length; index++) {
+//         mixedArray[2*index] = array1[index];
+//         mixedArray[2*index + 1] = array2[index];      
 //     }
-//     let trimList = [];
-//     let j = 0;
-//     for (let index = 0; index < array.length; index++) {
-        
-//         if(index >= a && index <= b){
-//             trimList [j] = array[index];
-//             j++;
-//         }        
-//     }
-//     return trimList;
+//     return mixedArray;
 // }
 
-// console.log(trim(list, 3, 8));
+// console.log(mixer(numbers, letters));
+
+// JSnack 5
+// Scrivi una funzione che accetti tre argomenti:
+// un array e due numeri (“a” più piccolo di “b” e “b” grande 
+// al massimo quanto il numero di elementi dell’array). 
+// La funzione ritornerà un nuovo array con i valori che hanno la posizione
+// compresa tra “a” e “b”
+
+const list = [1, 2, 3, 4, 5, 6, 7, 8, "Marco", true] ;
+const trim = (array, a, b) =>{
+    if(b > array.length){
+        b = array.length;
+    }
+    let trimList = [];
+    let j = 0;
+    for (let index = 0; index < array.length; index++) {
+        
+        if(index >= a && index <= b){
+            trimList [j] = array[index];
+            j++;
+        }        
+    }
+    return trimList;
+}
+
+console.log(trim(list, 3, 8));
