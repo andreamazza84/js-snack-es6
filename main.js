@@ -72,35 +72,67 @@
 //Nome sarà l’unica proprietà da compilare, le altre
 //saranno tutte settate a 0.
 
-const squadre = [
-    {'nome':'atalanta','punti':0, 'falli':0},
-    {'nome':'juventus','punti':0, 'falli':0},
-    {'nome':'chievo','punti':0, 'falli':0},
-    {'nome':'milan','punti':0, 'falli':0},
-    {'nome':'inter','punti':0, 'falli':0},
-    {'nome':'parma','punti':0, 'falli':0},
-    {'nome':'lazio','punti':0, 'falli':0},
-    {'nome':'napoli','punti':0, 'falli':0},
-    {'nome':'fiorentina','punti':0, 'falli':0}
-];
+// const squadre = [
+//     {'nome':'atalanta','punti':0, 'falli':0},
+//     {'nome':'juventus','punti':0, 'falli':0},
+//     {'nome':'chievo','punti':0, 'falli':0},
+//     {'nome':'milan','punti':0, 'falli':0},
+//     {'nome':'inter','punti':0, 'falli':0},
+//     {'nome':'parma','punti':0, 'falli':0},
+//     {'nome':'lazio','punti':0, 'falli':0},
+//     {'nome':'napoli','punti':0, 'falli':0},
+//     {'nome':'fiorentina','punti':0, 'falli':0}
+// ];
 
 //JSnack 4B
 //Generare numeri random al posto degli 0 nelle proprietà:
 //punti fatti e falli subiti
 
-random = (min, max) => {
-    let randomNum = Math.floor(Math.random()*(max - min)) + min;
-    return randomNum;
-}
+// random = (min, max) => {
+//     let randomNum = Math.floor(Math.random()*(max - min)) + min;
+//     return randomNum;
+// }
 
-for (let index = 0; index < squadre.length; index++) {
-    squadre[index]['punti'] = random(20, 200);
-    squadre[index]['falli'] = random(10, 50);
-}
+// for (let index = 0; index < squadre.length; index++) {
+//     squadre[index]['punti'] = random(20, 200);
+//     squadre[index]['falli'] = random(10, 50);
+// }
 
-console.log(squadre);
+// console.log(squadre);
 
 //BLOCCO 5
+
+//JSnack 1
+//Crea 10 oggetti che rappresentano una zucchina,
+//indicando per ognuna varietà, peso e lunghezza.
+//Calcola quanto pesano tutte le zucchine.
+
+class Zucchina{
+    constructor(varietà, peso, lunghezza){
+        this.varietà = varietà;
+        this.peso = peso;
+        this.lunghezza = lunghezza; 
+    }
+}
+let zucchine = [];
+
+zucchine[0] = new Zucchina('milanese', 150, 20);
+zucchine[1] = new Zucchina('romana', 200, 12);
+zucchine[2] = new Zucchina('faentina', 160, 18);
+zucchine[3] = new Zucchina('siciliana', 230, 16);
+zucchine[4] = new Zucchina('calabrese', 170, 20);
+zucchine[5] = new Zucchina('modenese', 220, 10);
+zucchine[6] = new Zucchina('triestina', 130, 12);
+zucchine[7] = new Zucchina('bolognese', 180, 14);
+zucchine[8] = new Zucchina('romagnola', 210, 15);
+zucchine[9] = new Zucchina('fiorentina', 175 , 14);
+
+let peso = 0;
+for (let index = 0; index < zucchine.length; index++) {
+    peso += zucchine[index]['peso'];
+}
+
+console.log(`Il peso di tutte le zucchine è pari a ${peso}`);
 
 
 
