@@ -139,55 +139,97 @@
 //come argomento e la ritorni girata 
 //(es. Ciao -> oaiC)
 
-const mirror = (word) =>{
-    let mirrorWord = "";
-    for (let index = (word.length - 1); index >= 0; index--) {
-        mirrorWord += word[index];
-    }
-    return mirrorWord;
-}
-console.log(`"Ciao" al contratio è: ${mirror("Ciao")}`);
+// const mirror = (word) =>{
+//     let mirrorWord = "";
+//     for (let index = (word.length - 1); index >= 0; index--) {
+//         mirrorWord += word[index];
+//     }
+//     return mirrorWord;
+// }
+// console.log(`"Ciao" al contratio è: ${mirror("Ciao")}`);
 
-// Alternativa
+// // Alternativa
 
-//dividi, rovescia, unisci
-const mirror2 = (word) => {
-    let mirrorWord = "";
-    mirrorWord = word.split("").reverse().join("");
-    return mirrorWord
-}
+// //dividi, rovescia, unisci
+// const mirror2 = (word) => {
+//     let mirrorWord = "";
+//     mirrorWord = word.split("").reverse().join("");
+//     return mirrorWord
+// }
 
-console.log(`"Cavolo" al contratio è: ${mirror2("Cavolo")}`);
+// console.log(`"Cavolo" al contratio è: ${mirror2("Cavolo")}`);
 
 //JSnack 3
+// Crea 10 oggetti che rappresentano una zucchina.
+// Dividi in due array separati le zucchine che misurano
+// meno o più di 15cm.
+// Infine stampa separatamente quanto pesano i due gruppi
+// di zucchine
+
+class Zucchina{
+    constructor(varietà, peso, lunghezza){
+        this.varietà = varietà;
+        this.peso = peso;
+        this.lunghezza = lunghezza; 
+    }
+}
+let zucchine = [];
+
+zucchine[0] = new Zucchina('milanese', 150, 20);
+zucchine[1] = new Zucchina('romana', 200, 12);
+zucchine[2] = new Zucchina('faentina', 160, 18);
+zucchine[3] = new Zucchina('siciliana', 230, 16);
+zucchine[4] = new Zucchina('calabrese', 170, 20);
+zucchine[5] = new Zucchina('modenese', 220, 10);
+zucchine[6] = new Zucchina('triestina', 130, 12);
+zucchine[7] = new Zucchina('bolognese', 180, 14);
+zucchine[8] = new Zucchina('romagnola', 210, 15);
+zucchine[9] = new Zucchina('fiorentina', 175 , 14);
+
+let corte = [];
+let lunghe = [];
+
+// for (let index = 0; index < zucchine.length; index++) {
+//     (zucchine[index]['lunghezza'] < 15) ? corte.push(zucchine[index]) : lunghe.push(zucchine[index]);
+// }
+let pesoCorte = 0;
+let pesoLunghe = 0;
+for (let index = 0; index < zucchine.length; index++){
+    if(zucchine[index]['lunghezza'] < 15){
+        corte.push(zucchine[index]);
+        pesoCorte += zucchine[index]['peso'];
+    }
+    else{
+        lunghe.push(zucchine[index]);
+        pesoLunghe += zucchine[index]['peso'];
+    }
+}
+
+console.log(`zucchine più corte di 15cm pesano: ${pesoCorte} g`);
+console.log(`zucchine più lunghe di 15cm pesano: ${pesoLunghe} g`);
+
+//JSnack 5
 //Scrivi una funzione che accetti tre argomenti:
 //un array e due numeri (“a” più piccolo di “b” e “b” grande 
 //al massimo quanto il numero di elementi dell’array). 
 //La funzione ritornerà un nuovo array con i valori che hanno la posizione
 // compresa tra “a” e “b”
 
-
-// list = [1, 2, 3, 4, 5, 6, 7, 8];
+// list = [1, 2, 3, 4, 5, 6, 7, 8, "Marco", true] ;
 // const trim = (array, a, b) =>{
 //     if(b > array.length){
 //         b = array.length;
 //     }
 //     let trimList = [];
+//     let j = 0;
 //     for (let index = 0; index < array.length; index++) {
         
 //         if(index >= a && index <= b){
-//             trimList [index] = array[index];
-//         }
-//         else{
-//             trimList[index] = 0; 
-//         }
-        
+//             trimList [j] = array[index];
+//             j++;
+//         }        
 //     }
 //     return trimList;
 // }
 
-// console.log(trim(list, 3, 6));
-
-//in alternativa si può usare .slice()
-
-//[].slice
+// console.log(trim(list, 3, 8));
